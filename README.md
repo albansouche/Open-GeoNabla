@@ -1,2 +1,2 @@
-# GeoNabla
-Open Source Finite Element Codes for Geosciences
+# Open GeoNabla
+MATLAB Open Source Finite Element Codes for Geosciences
