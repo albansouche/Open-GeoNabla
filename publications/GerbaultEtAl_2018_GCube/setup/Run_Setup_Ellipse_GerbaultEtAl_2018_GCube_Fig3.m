@@ -157,8 +157,8 @@ for idepth = 1:length(iD)
 
                 nnod          = size(MESH.NODES,2);
                 [nnodel,nel]  = size(MESH.ELEMS);
-                fprintf(1, ['\n Number of nodes:   ', num2str(nnod)]);
-                fprintf(1, ['\n Number of elems:   ', num2str(nel),'\n']);
+                fprintf(1, ['\nNumber of nodes    :  ', num2str(nnod)]);
+                fprintf(1, ['\nNumber of elems    :  ', num2str(nel),'\n\n']);
                 
                             %% Preprocessing
                             if  sum(POST.action(:))>0
