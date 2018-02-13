@@ -35,7 +35,10 @@ elast = 1; % '1'== elastic only ; '0'==elastoplastic
 SOLVER_e= SOLVER;
 %SOLVER_e.solver_type = 'direct_sym_chol';
 SOLVER_e.solver_type = SOLVER.solver_type;
-dU_e    = mechanical_solver(MESH, A_all, BC_e, fext, SOLVER_e); % fext increment as rhs
+        
+tic; fprintf(1,'Computing elastic predicator: ');
+dU_e = mechanical_solver(MESH, A_all, BC_e, fext, SOLVER_e); % fext increment as rhs
+fprintf(1, [num2str(toc), '  sec.\n']);
 dE_e    = strain_tot_calc(MESH, InvJ_all, dU_e, ieuv, SOLVER.nelblo);
 dE_e.xy = 2*dE_e.xy; % gamma convention
 dE_e.yz = 2*dE_e.yz; % gamma convention
@@ -62,8 +65,9 @@ rel_res_tol = SOLVER.ep_rel_res_tol;
 
 %% INCREMENTAL LOAD PROCEDURE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 max_it_nr = SOLVER.ep_max_NR_it;
-iincre = 1;
-out_loop = 0;
+iincre    = 1;
+out_loop  = 0;
+txt_loop  = 0;
 
 % Checking if failure is at interface or not
 indx7 = unique(find(MESH.node_markers==7));
@@ -131,16 +135,16 @@ while and(iincre <= nb_incre, out_loop==0)
             if find(ismember(find(sum(indx_p,1)),elem7))
                 figure(1),hold on
                 tetramesh(MESH.ELEMS(1:4, find(sum(indx_p,1)) )' , MESH.NODES'  )
-                fprintf(1,'failure at interface \n \n \n \n');
+                fprintf(1,'Failure at interface\n \n');
                 out_loop = 1;
                 dP_c = iincre;
                 tmp = -(P + P_litho);
                 dP_cm = max(tmp(:)) ;
                 break
-            else 
+            elseif txt_loop==0 
                 figure(1),hold on
                 tetramesh(MESH.ELEMS(1:4, find(sum(indx_p,1)) )' , MESH.NODES'  )
-                fprintf(1,'failure not at interface \n \n \n \n');
+                fprintf(1,'Failure not at interface, proceed to elastoplastic deformation:\n');
                 if dP_c_i==0
                     dP_c_i = iincre;
                 end    
@@ -165,9 +169,11 @@ while and(iincre <= nb_incre, out_loop==0)
             
             if rel_res(i+1)<rel_res_tol
                 % print info to screen
+                txt_loop = 0;
                 fprintf(1, ['Load increment (',num2str(iincre),'/',num2str(nb_incre),')    NR iterations: ', num2str(i,'%3.0d'), '    relative residual: ', num2str(rel_res(i+1),'%1.2e'),'    time(s): ',num2str(toc(TimeIncr)) ,'\n\n']);
                 break
             else
+                txt_loop = 1;
                 % Calculate NR increment
                 ddU = mechanical_solver(MESH, A_all, BC_NR, res, SOLVER); % res as rhs
                 alpha = 1; % Full Newton-Raphson update
