@@ -39,9 +39,9 @@ switch SOLVER.solver_type
         A_conv = sparse_convert(A, opts_sparse);
         Ax = @(x) spmv(A_conv,x);
 
-        tic
+%         tic
         [Disp(Free),~,~, iter] = pcg(Ax, Rhs, SOLVER.ep_rel_res_tol, 10000, @(x) precond.*x);
-        fprintf(1, ['PCG(',num2str(iter),'it)    SOLVED in ',num2str(toc), ' sec. \n']);
+%         fprintf(1, ['PCG(',num2str(iter),'it)    SOLVED in ',num2str(toc), ' sec. \n']);
 
    case 'AGMG'
 
