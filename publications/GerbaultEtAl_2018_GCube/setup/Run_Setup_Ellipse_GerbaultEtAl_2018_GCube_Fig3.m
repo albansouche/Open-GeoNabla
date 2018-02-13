@@ -17,8 +17,8 @@
 clear
 
 % PATH TO LIBRARIES -------------------------------------------------------
-path_libr_ext = '/Users/albanes/Desktop/DIPS/Modelling/GitHub_GeoNabla/libr/ext_libr';
-path_libr_3D  = '/Users/albanes/Desktop/DIPS/Modelling/GitHub_GeoNabla/libr/libr_3D';
+path_libr_ext = '../../../libr/ext_libr';
+path_libr_3D  = '../../../libr/libr_3D';
 addpath(genpath(path_libr_ext))
 addpath(genpath(path_libr_3D))
 
@@ -48,7 +48,7 @@ mu1_DP=[ 32.5  32.5   45  42    35  20];
 plot (mu1_la,mu1_DP,'g-*'); hold on;
 xlabel('lambda shape ratio');
 ylabel('DP wall failure');
-legend('CW r=0.5km','Adeli r=0.5km','Adhoc r=0.5km');hold on
+legend('CW r=0.5km','Adeli r=0.5km','Adhoc r=0.5km')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 for idepth = 1:length(iD)
