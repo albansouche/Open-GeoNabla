@@ -143,8 +143,12 @@ fclose(fid);
 
 
 %%% EXECUTE TETGEN
-tetgen_path = [SOLVER.path_libr,'/tetgen1.5.0/tetgen'];
-system([tetgen_path,' -pqqAa ',modelname,'.poly'])
+tetgen_path  = [SOLVER.path_libr,'/tetgen1.5.0/tetgen'];
+tic
+fprintf(1, '\nMeshing with Tetgen:  ');
+[dum1, dum2] = system([tetgen_path,' -pqqAa ',modelname,'.poly']);
+fprintf(1, [num2str(toc), ' sec.']);
+
 
 %%% READ OUTPUT TETGEN
 %NODES READING
