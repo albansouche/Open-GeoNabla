@@ -1,7 +1,7 @@
 function Fint = internal_force(MESH, INVJ, DetJ, Sdev, P, SOLVER) 
 
-% Part of OpenGeoNabla, copyright GPLv3, 2018
-% https://github.com/albansouche/OpenGeoNabla/
+% Part of Open-GeoNabla, copyright GPLv3, 2018
+% https://github.com/albansouche/Open-GeoNabla/
 % Physics of Geological Processes (PGP) , The NJORD Centre, Dept of Geosciences, University of Oslo
 % Author: Alban Souche
 

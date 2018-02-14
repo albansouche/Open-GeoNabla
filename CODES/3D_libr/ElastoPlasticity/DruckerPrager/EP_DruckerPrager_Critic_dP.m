@@ -1,7 +1,7 @@
 function [U, dP_c_i, dP_c, dP_cm] = EP_DruckerPrager_Critic_dP(MESH, PARAM, BC, P_litho, Fext, SOLVER, POST)
 
-% Part of OpenGeoNabla, copyright GPLv3, 2018
-% https://github.com/albansouche/OpenGeoNabla/
+% Part of Open-GeoNabla, copyright GPLv3, 2018
+% https://github.com/albansouche/Open-GeoNabla/
 % Physics of Geological Processes (PGP) , The NJORD Centre, Dept of Geosciences, University of Oslo
 % Author: Alban Souche
 

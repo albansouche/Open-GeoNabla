@@ -1,7 +1,7 @@
 function [F, cont_tx, cont_ty, cont_tz] = ContourTraction(MESH, SIGMA, seg_id)
 
-% Part of OpenGeoNabla, copyright GPLv3, 2018
-% https://github.com/albansouche/OpenGeoNabla/
+% Part of Open-GeoNabla, copyright GPLv3, 2018
+% https://github.com/albansouche/Open-GeoNabla/
 % Physics of Geological Processes (PGP) , The NJORD Centre, Dept of Geosciences, University of Oslo
 % Author: Jan Cornet
 

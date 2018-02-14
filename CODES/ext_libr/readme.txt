@@ -1,5 +1,5 @@
 
-Before running OpenGeoNabla, make sure that the following packages are installed in the current folder: 
+Before running Open-GeoNabla, make sure that the following packages are installed in the current folder: 
 
 ---------------------------------
 /CODES/ext_libr/mutils-0.4-2

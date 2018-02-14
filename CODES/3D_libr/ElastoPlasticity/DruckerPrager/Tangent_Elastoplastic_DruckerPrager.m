@@ -1,7 +1,7 @@
 function D_el_ip = Tangent_Elastoplastic_DruckerPrager(MESH, indx_p, indx_apex, d_gamma, Etrial, PARAM, nip)
 
-% Part of OpenGeoNabla, copyright GPLv3, 2018
-% https://github.com/albansouche/OpenGeoNabla/
+% Part of Open-GeoNabla, copyright GPLv3, 2018
+% https://github.com/albansouche/Open-GeoNabla/
 % Physics of Geological Processes (PGP) , The NJORD Centre, Dept of Geosciences, University of Oslo
 % Author: Alban Souche
 
