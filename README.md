@@ -1,5 +1,5 @@
 
-[![DOI](https://zenodo.org/badge/121242621.svg)](https://zenodo.org/badge/latestdoi/121242621)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1172194.svg)](https://doi.org/10.5281/zenodo.1172194)
 
 
 # Open-GeoNabla
