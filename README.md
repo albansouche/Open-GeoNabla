@@ -1,12 +1,12 @@
 
 [![DOI](https://zenodo.org/badge/121242621.svg)](https://zenodo.org/badge/latestdoi/121242621)
 
-# OpenGeoNabla
+# Open-GeoNabla
 MATLAB Open Source Finite Element Codes for use in Geosciences
 
 
 #### Version v0.1 (Pre-release) (14/02/2018):
-OpenGeoNabla requires the installation of the following packages in order to run:
+Open-GeoNabla requires the installation of the following packages in order to run:
   - MILAMIN utilities (Mutils-0.4.2) available at https://sourceforge.net/projects/milamin/files/
   - TetGen mesh generator (version 1.5.0) available at http://wias-berlin.de/software/tetgen/download2.jsp
   - S2 Sampling Toolbox available at https://www.mathworks.com/matlabcentral/fileexchange/37004-suite-of-functions-to-perform-uniform-sampling-of-a-sphere
