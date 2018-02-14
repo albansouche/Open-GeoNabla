@@ -1,10 +1,17 @@
 
-%% OPEN SOURCE GEONABLA MATLAB CODE ---------------------------------------
+%% SCRIPT TO EXECUTE 3D CALCULATIONS USED IN THE PUBLICATION:
+% Gerbault et al., 2018, Three dimensional failure patterns around an inflating magmatic chamber. Geochemistry, Geophysics, Geosystems  
+
+% Part of OpenGeoNabla, copyright GPLv3, 2018
+% https://github.com/albansouche/OpenGeoNabla/
+% Physics of Geological Processes (PGP) , The NJORD Centre, Dept of Geosciences, University of Oslo
+% Author: Alban Souche
+
+%%  OPENGEONABLA ----------------------------------------------------------
 %   Elasto-Plasticity (Drucker-Prager)
 %   3D finite element formulation (fully implicit)
-%   Code build partially upon MILAMIN 1.0.1, Mutils 0.4.2, FOLDER 1.0
+%   Code build partially upon MILAMIN 1.0.1, Mutils 0.4.2, Tetgen1.5.0, FOLDER 1.0
 %   Elasto-plastic implementation inspired from HYPLAS_v2.0
-%   By ALBAN SOUCHE, Physics of Geological Processes, Njord Center, Departement of Geosciences, University of Oslo, January 2017
 % -------------------------------------------------------------------------
 %   DETAILS:
 %   - Drucker-Prager failure criteria
@@ -17,10 +24,10 @@
 clear
 
 % PATH TO LIBRARIES -------------------------------------------------------
-path_libr_ext = '../../../libr/ext_libr';
-path_libr_3D  = '../../../libr/libr_3D';
-addpath(genpath(path_libr_ext))
-addpath(genpath(path_libr_3D))
+path_ext_libr = '../../../CODES/ext_libr';
+path_3D_libr  = '../../../CODES/3D_libr';
+addpath(genpath(path_ext_libr))
+addpath(genpath(path_3D_libr))
 
 %--------------------------------------------------------------------------
 % MESH ARGUMENTS ----------------------------------------------------------
@@ -48,7 +55,7 @@ mu1_DP=[ 32.5  32.5   45  42    35  20];
 plot (mu1_la,mu1_DP,'g-*'); hold on;
 xlabel('lambda shape ratio');
 ylabel('DP wall failure');
-legend('CW r=0.5km','Adeli r=0.5km','Adhoc r=0.5km')
+legend('CW r=0.5km','Adeli r=0.5km')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 for idepth = 1:length(iD)
@@ -123,13 +130,13 @@ for idepth = 1:length(iD)
                 SOLVER.ep_max_NR_it   = 100;    % maximum number of NR iterations
                 SOLVER.nelblo         = 10000; % number of elem per block for matrix assemblage (MILAMIN approach)
                 SOLVER.nb_cpu         = 2;     % number of cpu to use for parallel calculations
-                SOLVER.solver_type    = 'PCG'; % 'direct_sym_chol' / 'direct_sym' / 'direct_nonsym' / (develpment: 'pcg'/'MPCG'/'AGMG')
+                SOLVER.solver_type    = 'PCG'; 
                 
                 %--------------------------------------------------------------------------
                 % PLOTTING and SAVING (to ../resutls/)-------------------------------------
                 %--------------------------------------------------------------------------
                 set(0, 'DefaultFigureRenderer', 'zbuffer');
-                POST.folder_name = ['../results/El_Intru_',num2str( max(1,length(dir('../results/Ell_Intru*'))+1) )] ;
+                POST.folder_name = ['../results/Ell_Intru_',num2str( max(1,length(dir('../results/Ell_Intru*'))+1) )] ;
                 POST.Hz_action   = 10; % frequency of executing the postprocessing
                 %             [ save_data ]  % 1 or 0
                 POST.action = [ 0 ; ... % 'mesh'
@@ -151,7 +158,7 @@ for idepth = 1:length(iD)
                 ndim          = 3;   % 3D simulation
                 % generate meshes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 modelname = [pwd,'/mesh_ell'];
-                SOLVER.path_libr = path_libr_ext; 
+                SOLVER.path_libr = path_ext_libr; 
                 MESH = generate3Dmesh_ellipsoid(MESHARG, SOLVER, modelname);
                 MESH.EperN    = accumarray(MESH.ELEMS(:), ones(size(MESH.ELEMS(:))));
 

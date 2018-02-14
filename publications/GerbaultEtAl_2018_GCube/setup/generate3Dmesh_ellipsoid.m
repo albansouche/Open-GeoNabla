@@ -1,7 +1,13 @@
 function MESH = generate3Dmesh_ellipsoid(mesharg, SOLVER, modelname)
 
+% Part of OpenGeoNabla, copyright GPLv3, 2018
+% https://github.com/albansouche/OpenGeoNabla/
+% Physics of Geological Processes (PGP) , The NJORD Centre, Dept of Geosciences, University of Oslo
+% Author: Alban Souche
+
+
 % 3D Mesh generation build upon Tetgen1.5.0 mesh generator
-% By ALBAN SOUCHE, Physics of Geological Processes, Njord Center, Departement of Geosciences, University of Oslo, January 2017
+
 
 %%%%%%%%%%%%%% GENERATE PTS AND FACES OF DOMAIN BOX %%%%%%%%%%%%%%%%%%%%%%%
 
