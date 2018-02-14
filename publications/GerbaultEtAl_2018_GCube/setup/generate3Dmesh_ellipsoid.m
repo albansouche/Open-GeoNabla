@@ -1,7 +1,7 @@
 function MESH = generate3Dmesh_ellipsoid(mesharg, SOLVER, modelname)
 
-% Part of OpenGeoNabla, copyright GPLv3, 2018
-% https://github.com/albansouche/OpenGeoNabla/
+% Part of Open-GeoNabla, copyright GPLv3, 2018
+% https://github.com/albansouche/Open-GeoNabla/
 % Physics of Geological Processes (PGP) , The NJORD Centre, Dept of Geosciences, University of Oslo
 % Author: Alban Souche
 

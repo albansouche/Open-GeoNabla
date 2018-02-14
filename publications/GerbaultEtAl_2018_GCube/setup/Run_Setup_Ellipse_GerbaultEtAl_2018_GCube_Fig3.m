@@ -2,8 +2,8 @@
 %% SCRIPT TO EXECUTE 3D CALCULATIONS USED IN THE PUBLICATION:
 % Gerbault et al., 2018, Three dimensional failure patterns around an inflating magmatic chamber. Geochemistry, Geophysics, Geosystems  
 
-% Part of OpenGeoNabla, copyright GPLv3, 2018
-% https://github.com/albansouche/OpenGeoNabla/
+% Part of Open-GeoNabla, copyright GPLv3, 2018
+% https://github.com/albansouche/Open-GeoNabla/
 % Physics of Geological Processes (PGP) , The NJORD Centre, Dept of Geosciences, University of Oslo
 % Author: Alban Souche
 
