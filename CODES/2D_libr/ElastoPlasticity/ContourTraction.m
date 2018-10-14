@@ -22,18 +22,18 @@ function [F,cont_tx,cont_ty] = ContourTraction(MESH, SIGMA, seg_id, seg_id_corne
 %   *                 *
 %   *******************
 
+
+
 % Traction only along specific segment number %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Correction from shared nodes at the corner
-if and(seg_id,seg_id_corner)
-    dummy1 = MESH.SEGMENTS(:,MESH.segment_markers==seg_id);
-    dummy2 = MESH.SEGMENTS(:,MESH.segment_markers==seg_id_corner);
-    nodes_shared_corner = dummy1(ismember(dummy1,dummy2));
-    indx_seg_out = ~(MESH.segment_markers==seg_id);
-    MESH.segment_markers(indx_seg_out) = [];
-    MESH.SEGMENTS(:,indx_seg_out)      = [];
-    MESH.normal(:,indx_seg_out)        = [];
-end
+dummy1 = MESH.SEGMENTS(:,MESH.segment_markers==seg_id);
+dummy2 = MESH.SEGMENTS(:,ismember(MESH.segment_markers,seg_id_corner));
+indx_seg_out = ~(MESH.segment_markers==seg_id);
+MESH.segment_markers(indx_seg_out) = [];
+MESH.SEGMENTS(:,indx_seg_out)      = [];
+MESH.normal(:,indx_seg_out)        = [];
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 NODES=MESH.NODES;
 [ndim,nnod]=size(NODES);

@@ -5,7 +5,7 @@ function MESH_ep = generate_mesh_Gerbault2012(mesharg)
 % Physics of Geological Processes (PGP) , The NJORD Centre, Dept of Geosciences, University of Oslo
 % Author: Alban Souche
 
-% 3D Mesh generation build upon Tetgen1.5.0 mesh generator
+% 2D Mesh generation build upon Mutils-0.4-2 (Triangle mesh generator)
 
 
 %% FULL DOMAIN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
