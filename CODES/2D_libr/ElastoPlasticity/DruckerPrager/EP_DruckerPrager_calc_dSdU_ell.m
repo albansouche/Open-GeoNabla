@@ -1,8 +1,14 @@
 function U = EP_DruckerPrager_calc_dSdU_ell(MESH, PARAM, BC, P_litho, Fext, SOLVER, POST)
 
-%   Implementation of Compressible Elasto Plasticity
-%   Code build upon MILAMIN Version 1.0.1, Mutils 0.4.2, FOLDER 1.0
-%   By ALBAN SOUCHE, PGP UiO, August 2016
+
+% Part of Open-GeoNabla, copyright GPLv3, 2018
+% https://github.com/albansouche/Open-GeoNabla/
+% Physics of Geological Processes (PGP) , The NJORD Centre, Dept of Geosciences, University of Oslo
+% Author: Alban Souche
+
+% Implementation of Compressible Elasto Plasticity
+% Code build upon MILAMIN Version 1.0.1, Mutils 0.4.2, HYPLAS_v2.0, FOLDER 1.0
+
 
 %% Mesh parameters
 [ndim, nnod] = size(MESH.NODES);
