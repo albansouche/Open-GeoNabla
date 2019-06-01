@@ -5,12 +5,10 @@
 % Physics of Geological Processes (PGP) , The NJORD Centre, Dept of Geosciences, University of Oslo
 % Author: Alban Souche
 
-
 % SCRIPT USED FOR THE PUBLICATION:
 % Souche, A., Galland, O., Haug, Ø. T., & Dabrowski, M. (2019). Impact of 
 % host rock heterogeneity on failure around pressurized conduits: Implications
 % for finger-shaped magmatic intrusions. Tectonophysics.
-
 
 % SHORT DETAILS ON SETUP AND SOLVER
 % - Cylindrical / Finger shaped magmatic intrusion
