@@ -22,8 +22,8 @@ clear
 
 % PATH TO LIBRARIES -------------------------------------------------------
 restoredefaultpath
-path_ext_libr = '../../../CODES/ext_libr';
-path_2D_libr  = '../../../CODES/2D_libr';
+path_ext_libr = fullfile('..','..','..','CODES','ext_libr');
+path_2D_libr  = fullfile('..','..','..','CODES','2D_libr');
 addpath(genpath(path_ext_libr))
 addpath(genpath(path_2D_libr))
 warning off %make sure MUTILS is compiled with OpenMP for best performance
