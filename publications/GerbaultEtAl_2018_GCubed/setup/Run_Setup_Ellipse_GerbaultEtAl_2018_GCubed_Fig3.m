@@ -24,8 +24,8 @@
 clear
 
 % PATH TO LIBRARIES -------------------------------------------------------
-path_ext_libr = '../../../CODES/ext_libr';
-path_3D_libr  = '../../../CODES/3D_libr';
+path_ext_libr = fullfile('..','..','..','CODES','ext_libr');
+path_3D_libr  = fullfile('..','..','..','CODES','3D_libr');
 addpath(genpath(path_ext_libr))
 addpath(genpath(path_3D_libr))
 
@@ -129,7 +129,7 @@ for idepth = 1:length(iD)
                 SOLVER.ep_NR          = 'NR_full_update'; % 'NewtonRaphson full update'
                 SOLVER.ep_max_NR_it   = 100;    % maximum number of NR iterations
                 SOLVER.nelblo         = 10000; % number of elem per block for matrix assemblage (MILAMIN approach)
-                SOLVER.nb_cpu         = 2;     % number of cpu to use for parallel calculations
+                SOLVER.nb_cpu         = 1;     % number of cpu to use for parallel calculations
                 SOLVER.solver_type    = 'PCG'; 
                 
                 %--------------------------------------------------------------------------

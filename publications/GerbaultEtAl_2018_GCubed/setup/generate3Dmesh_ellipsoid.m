@@ -148,7 +148,7 @@ fclose(fid);
 
 
 %%% EXECUTE TETGEN
-tetgen_path  = [SOLVER.path_libr,'/tetgen1.5.0/tetgen'];
+tetgen_path  = fullfile(SOLVER.path_libr,'tetgen1.5.0','tetgen');
 tic
 fprintf(1, '\nMeshing with Tetgen:  ');
 [dum1, dum2] = system([tetgen_path,' -pqqAa ',modelname,'.poly']);
